@@ -1,0 +1,77 @@
+@import 'normalize';
+@import 'boilerplate';
+
+$prefix-for-webkit:    true !default;
+$prefix-for-mozilla:   true !default;
+$prefix-for-microsoft: true !default;
+$prefix-for-opera:     true !default;
+$prefix-for-spec:      true !default;
+
+$base-font-size: 16px;
+
+/* ==========================================================================
+    PX->EM TRANSLATOR FUNCTION
+    REquires setting $base-font-size beforehand | Example: em(16px); -> 1em;
+   ========================================================================== */
+@function em($px, $base: $base-font-size) {
+    @return ($px / $base) * 1em;
+}
+
+/* ==========================================================================
+    PREFIXER MIXIN
+    Example: @include prefixer(border-radius, $radii, webkit ms spec);
+   ========================================================================== */
+
+@mixin prefixer ($property, $value, $prefixes) {
+  @each $prefix in $prefixes {
+    @if $prefix == webkit {
+      @if $prefix-for-webkit {
+        -webkit-#{$property}: $value;
+      }
+    }
+    @else if $prefix == moz {
+      @if $prefix-for-mozilla {
+        -moz-#{$property}: $value;
+      }
+    }
+    @else if $prefix == ms {
+      @if $prefix-for-microsoft {
+        -ms-#{$property}: $value;
+      }
+    }
+    @else if $prefix == o {
+      @if $prefix-for-opera {
+        -o-#{$property}: $value;
+      }
+    }
+    @else if $prefix == spec {
+      @if $prefix-for-spec {
+        #{$property}: $value;
+      }
+    }
+    @else  {
+      @warn "Unrecognized prefix: #{$prefix}";
+    }
+  }
+}
+
+@mixin disable-prefix-for-all() {
+  $prefix-for-webkit:    false !global;
+  $prefix-for-mozilla:   false !global;
+  $prefix-for-microsoft: false !global;
+  $prefix-for-opera:     false !global;
+  $prefix-for-spec:      false !global;
+}
+
+/* ==========================================================================
+    VERTICALLY-ALIGN ANYTHING MIXIN
+    Requires that children element are wrapped in a container DOM element
+   ========================================================================== */
+@mixin vertical-align {
+    @include prefixer (transform-style, preserve-3d, webkit moz ms o spec);
+    > *  {
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%);   
+    }
+}
