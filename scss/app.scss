@@ -1,41 +1,25 @@
 @import 'base';
 
-$background-image:'/assets/images/bg.jpg';
-$avatar-image:'/assets/images/avatar.jpg';
-$shadow-color: rgba(146, 146, 146, 0.5);
-
-/* ==========================================================================
-   Shared implementation
-   ========================================================================== */
-
-html, body {
-    height: 100%;
-    width: 100%;
+html,
+body {
+    @include full-size;
 }
-
 body {
     background: url($background-image) no-repeat 50% 50% fixed;
-    @include prefixer(background-size, cover, webkit moz o spec);
-    font-family: 'Montserrat', sans-serif;
-    font-size: $base-font-size;
     text-align: center;
-    & > header, & > article {
-        position: absolute;
-    }
-    & > header {
-        top: 0;
-        margin-bottom: 50%;
-        height: 60%;
-    }
-    & > article {
-        bottom: 0;
-        margin-top: 50%;
-        height: 40%;
+    font-size: $base-font-size;
+    font-family: $body-font-family, sans-serif;
+
+    @include prefixer(background-size, cover, webkit moz o spec);
+    * {
+        box-sizing: border-box;
     }
 }
-h1, h2, h3 {
-    font-size: em(14px);
+h1,
+h2,
+h3 {
     font-weight: normal;
+    font-size: em(14px);
 }
 a {
     color: white;
@@ -44,135 +28,155 @@ a {
         opacity: 0.6;
     }
 }
-.header {
-    h1,
-    h2 {
-        margin: 0 auto;
-        line-height: 1.6em;
-        .header-name {
-            display: block;
-            color: #E4E2DF;
-            font-family: 'Oswald', sans-serif;
-            font-size: em(72px);
-            text-transform: uppercase;
-            text-shadow: 0px 4px 0px $shadow-color;
-            line-height: 1.6;
-        }
-        a {
-            border-bottom: 1px dotted white;
-        }
-    }
-    h2 {
-        max-width: em(480px);
-    }
-    .avatar {
-        border-radius: 50%;
-        width: em(140px);
-        height: em(136px);
-        margin: 0 auto em(15px);
-        overflow: hidden;
-        background: url($avatar-image) no-repeat;
-        @include prefixer(box-shadow, 0px 4px 0px 0px  $shadow-color, webkit moz o spec);
-        @include prefixer(background-size, cover, webkit moz o spec);
-    }
-}
+.uiux {
+    display: flex;
+    flex-direction: column;
 
-.main {
-    ul {
-        max-width: em(1100px);
-        margin: auto;
+    @include full-size;
+    align-items: center;
+    justify-content: center;
+    .uiux-block {
+        width: 100%;
     }
-    ul, li {
-        padding: 0;
-        list-style-type: none;
-    }
-    li {
-        display: block;
-        margin: 0;
-        float: left;
-        width: 20%;
-        a {
-            display: block;
-            border: 3px solid white;
-            border-radius: 3px;
-            background: rgba(255, 255, 255, 0.2);
-            line-height: 2em;
-            width: 80%;
+    .uiux-header {
+        padding: em(40px);
+
+        flex: 1 1;
+        @include max-screen($breakpoint-tablet) {
+            flex: 1 1 60%;
+        }
+        @include min-screen($breakpoint-desktop) {
+            h1,
+            h2 {
+                font-size: $base-font-size+1;
+            }
+        }
+        h1,
+        h2 {
             margin: 0 auto;
-            .button-desc {
-                display: none;
-                font-size: 0.9em;
-            }
-            &:hover {
-                background: rgba(255, 255, 255, 1);
-                color: #444;
-                .button-label {
-                    display: none;
-                    visibility: hidden;
+            line-height: 1.6em;
+            .uiux-header-name {
+                display: block;
+                color: #e4e2df;
+                text-transform: uppercase;
+                text-shadow: 0 4px 0 $shadow-color;
+                font-size: em(65px);
+                font-family: $header-font-family, sans-serif;
+                line-height: 1.6;
+
+                @include max-screen($breakpoint-mobile) {
+                    text-shadow: 0 2px 0 $shadow-color;
+                    font-size: em(50px);
+                    line-height: 2em;
                 }
-                .button-desc {
-                    display: block;
+                @include min-screen($breakpoint-tablet) {
+                    font-size: em(72px);
+                }
+                a {
+                    border-bottom: 1px dotted white;
                 }
             }
         }
-    }
-}
-
-/* ==========================================================================
-   Media Queries
-   ========================================================================== */
-
-@media only screen and (max-width: 768px) { 
-    body {
-        & > header, & > article {
-            position: relative;
+        h2 {
+            max-width: em(480px);
         }
-        .header {
-            padding-top: 1em;
-            .header-name {
-                font-size: em(60px);
+        .avatar {
+            overflow: hidden;
+            margin: 0 auto em(15px);
+            width: em(140px);
+            height: em(136px);
+            border-radius: 50%;
+            background: url($avatar-image) no-repeat;
+
+            @include max-screen-height($breakpoint-short) {
+                width: 0;
+                height: 0;
             }
-            .avatar {
+            @include prefixer(transition, all 0.5s ease-in-out, webkit spec);
+            @include prefixer(box-shadow, 0px 4px 0px 0px $shadow-color, webkit moz o spec);
+            @include prefixer(background-size, cover, webkit moz o spec);
+            @include max-screen(768px) {
                 width: em(110px);
                 height: em(106px);
             }
         }
     }
-    .main {
-        li {
-            width: 50%;
-            margin-bottom: 6%;
-            &:nth-child(5) {
-                width: 100%;
-                a {
-                    width: 90%;
+    .uiux-nav {
+        flex: 0 0 150px;
+        @include max-screen($breakpoint-tablet) {
+            flex: 0 0 40%;
+        }
+        .uiux-nav-buttons {
+            margin: auto;
+            max-width: em(1100px);
+        }
+        .uiux-nav-buttons,
+        .uiux-nav-button {
+            padding: 0;
+            list-style-type: none;
+        }
+        .uiux-nav-button {
+            display: block;
+            float: left;
+            margin: 0;
+            width: 20%;
+
+            @include max-screen($breakpoint-tablet) {
+                margin-bottom: 6%;
+                width: 50%;
+                &:nth-last-child(1) {
+                    padding: 0 5%;
+                    width: 100%;
+                    a {
+                        width: 100%;
+                    }
                 }
             }
-        }
-    }
-}
-
-@media only screen and (max-width: 420px) { 
-    body {
-        .header {
-            .header-name {
-                font-size: em(45px);
+            a {
+                position: relative;
+                display: block;
+                overflow: hidden;
+                margin: 0 auto;
+                width: 80%;
+                height: 2.3em;
+                border: 3px solid white;
+                border-radius: 3px;
+                background: rgba(255, 255, 255, 0.2);
                 line-height: 2em;
-                text-shadow: 0px 2px 0px $shadow-color;
-            }
-        }
-    }
-}
 
-@media only screen and (min-width: 768px) {
-    .header, .main {
-        @include vertical-align;
-    }
-}
-@media only screen and (min-width: 1440px) {
-    header {
-        h1, h2 {
-            font-size: $base-font-size+1;
+                -webkit-backface-visibility: hidden;
+            	-moz-osx-font-smoothing: grayscale;
+                > span {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    display: block;
+                    font-size: 0.9em;
+
+                    @include full-size;
+                    @include prefixer(transition, transform 0.3s, webkit spec);
+                    @include prefixer(transition-timing-function, cubic-bezier(0.2, 1, 0.3, 1), webkit spec);
+                }
+                &:focus {
+                    outline: none;
+                }
+                .button-label {
+                    @include prefixer(transform, translate3d(0, 0%, 0), webkit spec);
+                }
+                .hover-button-label {
+                    @include prefixer(transform, translate3d(0, 100%, 0), webkit spec);
+                }
+                &:hover {
+                    background: rgba(255, 255, 255, 1);
+                    color: #444;
+                    .button-label {
+                        @include prefixer(transform, translate3d(0, -100%, 0), webkit spec);
+                    }
+                    .hover-button-label {
+                        @include prefixer(transform, translate3d(0, 0%, 0), webkit spec);
+                    }
+                }
+            }
         }
     }
 }
