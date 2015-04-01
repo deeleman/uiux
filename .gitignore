@@ -1,4 +1,6 @@
 .DS_Store
 .brackets.json
+.sass-cache
+/.sass-cache
 assets/css
 assets/js/main.js
