@@ -52,6 +52,7 @@
             width: Math.max(document.documentElement.clientWidth, window.innerWidth || 0),
             height: Math.max(document.documentElement.clientHeight, window.innerHeight || 0)
         };
+        // Code below borrowed from https://github.com/pupunzi/jquery.mb.YTPlayer
         var margin = 24;
         var overprint = 100;
         playerBox.width = playerBox.width + ((playerBox.width * margin) / 100);
