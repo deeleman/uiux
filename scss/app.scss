@@ -1,5 +1,4 @@
 @import 'base';
-
 html,
 body {
     @include full-size;
@@ -10,6 +9,9 @@ body {
     font-size: $base-font-size;
     font-family: $body-font-family, sans-serif;
 
+    @include max-screen($breakpoint-mobile) {
+        background-image: url($background-image-mobile);
+    }
     @include prefixer(background-size, cover, webkit moz o spec);
     * {
         box-sizing: border-box;
@@ -28,7 +30,48 @@ a {
         opacity: 0.6;
     }
 }
-.uiux {
+.uiux-video-background {
+    position: relative;
+    display: block;
+    opacity: 0;
+    -webkit-transition-duration: 2000ms;
+    transition-duration: 2000ms;
+    -webkit-transition-property: opacity;
+    transition-property: opacity;
+
+    @include max-screen($breakpoint-mobile) {
+        display: none;
+    }
+    -webkit-backface-visibility: hidden;
+    .video-background-wrapper,
+    .video-background-mask {
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 0;
+        overflow: hidden;
+        min-width: 100%;
+        min-height: 100%;
+
+        iframe {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            z-index: 0;
+            overflow: hidden;
+            width: 100vw;
+            height: 100vh;
+            opacity: 1;
+        }
+    }
+    .video-background-mask {
+        background: url($background-overlay-pattern);
+    }
+}
+.uiux-content {
+    position: absolute;
+    top: 0;
+    left: 0;
     display: flex;
     flex-direction: column;
 
@@ -45,7 +88,13 @@ a {
         @include max-screen($breakpoint-tablet) {
             flex: 1 1 60%;
         }
+        @include min-screen($breakpoint-tablet) {
+            padding: 0;
+
+            @include vertical-align;
+        }
         @include min-screen($breakpoint-desktop) {
+
             h1,
             h2 {
                 font-size: $base-font-size+1;
@@ -89,13 +138,12 @@ a {
             background: url($avatar-image) no-repeat;
 
             @include max-screen-height($breakpoint-short) {
-                width: 0;
-                height: 0;
+                display: none;
             }
             @include prefixer(transition, all 0.5s ease-in-out, webkit spec);
             @include prefixer(box-shadow, 0px 4px 0px 0px $shadow-color, webkit moz o spec);
             @include prefixer(background-size, cover, webkit moz o spec);
-            @include max-screen(768px) {
+            @include max-screen($breakpoint-tablet) {
                 width: em(110px);
                 height: em(106px);
             }
@@ -105,6 +153,11 @@ a {
         flex: 0 0 150px;
         @include max-screen($breakpoint-tablet) {
             flex: 0 0 40%;
+        }
+        @include max-screen-height($breakpoint-short) {
+            .uiux-nav-header {
+                display: none;
+            }
         }
         .uiux-nav-buttons {
             margin: auto;
@@ -145,7 +198,7 @@ a {
                 line-height: 2em;
 
                 -webkit-backface-visibility: hidden;
-            	-moz-osx-font-smoothing: grayscale;
+                -moz-osx-font-smoothing: grayscale;
                 > span {
                     position: absolute;
                     top: 0;

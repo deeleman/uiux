@@ -72,9 +72,10 @@ $base-font-size: 16px;
 @mixin vertical-align {
     @include prefixer (transform-style, preserve-3d, webkit moz ms o spec);
     > *  {
-        position: relative;
+        position: absolute;
         top: 50%;
         transform: translateY(-50%);
+        width: 100%;
     }
 }
 
