@@ -37,7 +37,8 @@
 
     var onPlayerReady = function(event) {
         videoPlayerWrapper = videoContainer.querySelector('[data-src]');
-        player.addEventListener('resize', onResizePlayer);
+        player.addEventListener('resize', resizeBackgroundVideo);
+        resizeBackgroundVideo();
     };
     var onPlayerStateChange = function() {
         setTimeout(function() {
@@ -47,7 +48,7 @@
             videoContainer.style.opacity = 0;
         }, (player.getDuration()*1000) - buffer);
     };
-    var onResizePlayer = function() {
+    var resizeBackgroundVideo = function() {
         var playerBox = {
             width: Math.max(document.documentElement.clientWidth, window.innerWidth || 0),
             height: Math.max(document.documentElement.clientHeight, window.innerHeight || 0)
