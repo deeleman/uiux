@@ -1,6 +1,9 @@
 .DS_Store
 .brackets.json
+.cache
+.vscode
 .sass-cache
 /.sass-cache
 assets/css
-assets/js/main.js
+dist
+/node_modules

@@ -1,0 +1,18 @@
+{
+  "name": "uiux",
+  "version": "2.0.0",
+  "description": "Personal site for Pablo Deeleman",
+  "main": "index.html",
+  "repository": "git@github.com:deeleman/uiux.git",
+  "author": "Pablo Deeleman <deeleman@gmail.com>",
+  "license": "MIT",
+  "private": false,
+  "scripts": {
+    "dev": "parcel index.html",
+    "build": "parcel build index.html"
+  },
+  "devDependencies": {
+    "parcel-bundler": "^1.12.4",
+    "sass": "^1.26.8"
+  }
+}
