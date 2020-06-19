@@ -2,88 +2,93 @@
 <html>
 
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>UIUX.es | Paul Deeleman, UX Designer and Javascript Developer</title>
-    <meta name="description" content="Paul Deeleman is a UX & Interaction Designer and Javascript Developer based in sunny Barcelona">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title>UIUX.es | Paul Deeleman, UX Engineer and Javascript Developer</title>
+	<meta name="description"
+		content="Paul Deeleman is a UX & Interaction Engineer and Javascript Developer based in sunny Barcelona">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Montserrat|Oswald">
-    <link rel="stylesheet" type="text/css" href="assets/css/app.css">
-    <script type="text/javascript" src="assets/js/uiux.js" defer></script>
+	<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Montserrat|Oswald">
+	<link rel="stylesheet" type="text/css" href="./scss/app.scss">
+	<script type="text/javascript" src="./assets/js/uiux.js" defer></script>
 </head>
 
 <body>
-    <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-WP72M4" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-WP72M4');</script>
+	<noscript>
+    <iframe src="//www.googletagmanager.com/ns.html?id=GTM-WP72M4" height="0" width="0"
+      style="display:none;visibility:hidden">
+    </iframe>
+  </noscript>
+	<script>(function (w, d, s, l, i) {
+			w[l] = w[l] || []; w[l].push({
+				'gtm.start':
+					new Date().getTime(), event: 'gtm.js'
+			}); var f = d.getElementsByTagName(s)[0],
+				j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+					'//www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+		})(window, document, 'script', 'dataLayer', 'GTM-WP72M4');</script>
 
-    <!--[if lte IE 9]>
-    <p class="unsupported-uiux"><strong>uiux.es</strong> does not support your <strong>outdated</strong> browser. Improve your experience now: <a href="http://browsehappy.com/">upgrade your browser</a></p>
-    <![endif]-->
+	<section class="uiux-video-background">
+		<div id="uiux-video-player" class="video-background-wrapper" data-src="FSWH2-RsQvA" data-buffer="2000"></div>
+		<div class="video-background-mask"></div>
+	</section>
 
-    <section class="uiux-video-background">
-        <div id="uiux-video-player" class="video-background-wrapper" data-src="FSWH2-RsQvA" data-buffer="2000"></div>
-        <div class="video-background-mask"></div>
-    </section>
+	<article class="uiux-content">
 
-    <article class="uiux-content">
+		<header class="uiux-block uiux-header">
+			<div>
+				<h1>Welcome you foolish wanderer
+					<br />to the very personal Internet corner of
+					<span class="uiux-header-name">
+						<span class="first-name">Paul</span>
+						<span class="last-name">Deeleman</span>
+					</span>
+				</h1>
+				<img class="avatar" src="">
+				<h2>UX &amp; Interaction Engineer and Javascript Developer currently living in sunny and vibrant
+					Barcelona.</h2>
+			</div>
+		</header>
 
-        <header class="uiux-block uiux-header">
-            <div>
-                <h1>Welcome you foolish wanderer
-                    <br />to the very personal Internet corner of
-                    <span class="uiux-header-name">
-                        <span class="first-name">Paul</span>
-                        <span class="last-name">Deeleman</span>
-                    </span>
-                </h1>
-                <img class="avatar" src="">
-                <h2>UX &amp; Interaction Designer and Javascript Developer currently living in sunny and vibrant Barcelona.</h2>
-            </div>
-        </header>
-
-        <nav class="uiux-block uiux-nav">
-            <ul class="uiux-nav-buttons">
-                <li class="uiux-nav-header">
-                    <h3>Now let's do something together!</h3>
-                </li>
-                <li class="uiux-nav-button">
-                    <a href="http://www.linkedin.com/in/pablodeeleman/" class="button" target="_blank">
-                        <span class="button-label">LinkedIn</span>
-                        <span class="hover-button-label">My Resumé</span>
-                    </a>
-                </li>
-                <li class="uiux-nav-button">
-                    <a href="https://www.behance.net/pablodeeleman" class="button" target="_blank">
-                        <span class="button-label">Bēhance</span>
-                        <span class="hover-button-label">My Portfolio</span>
-                    </a>
-                </li>
-                <li class="uiux-nav-button">
-                    <a href="https://github.com/deeleman" class="button" target="_blank">
-                        <span class="button-label">GitHub</span>
-                        <span class="hover-button-label">My Code</span>
-                    </a>
-                </li>
-                <li class="uiux-nav-button">
-                    <a href="http://twitter.com/pablodeeleman" class="button" target="_blank">
-                        <span class="button-label">Twitter</span>
-                        <span class="hover-button-label">My Tweets</span>
-                    </a>
-                </li>
-                <li class="uiux-nav-button">
-                    <a href="mailto:deeleman@gmail.com" class="button">
-                        <span class="button-label">Email</span>
-                        <span class="hover-button-label">Say Hi!</span>
-                    </a>
-                </li>
-            </ul>
-        </nav>
-    </article>
+		<nav class="uiux-block uiux-nav">
+			<ul class="uiux-nav-buttons">
+				<li class="uiux-nav-header">
+					<h3>Let's do something together!</h3>
+				</li>
+				<li class="uiux-nav-button">
+					<a href="http://www.linkedin.com/in/pablodeeleman/" class="button" target="_blank">
+						<span class="button-label">LinkedIn</span>
+						<span class="hover-button-label">My Resumé</span>
+					</a>
+				</li>
+				<li class="uiux-nav-button">
+					<a href="https://www.behance.net/pablodeeleman" class="button" target="_blank">
+						<span class="button-label">Bēhance</span>
+						<span class="hover-button-label">My Portfolio</span>
+					</a>
+				</li>
+				<li class="uiux-nav-button">
+					<a href="https://github.com/deeleman" class="button" target="_blank">
+						<span class="button-label">GitHub</span>
+						<span class="hover-button-label">My Code</span>
+					</a>
+				</li>
+				<li class="uiux-nav-button">
+					<a href="http://twitter.com/pablodeeleman" class="button" target="_blank">
+						<span class="button-label">Twitter</span>
+						<span class="hover-button-label">My Tweets</span>
+					</a>
+				</li>
+				<li class="uiux-nav-button">
+					<a href="mailto:deeleman@gmail.com" class="button">
+						<span class="button-label">Email</span>
+						<span class="hover-button-label">Say Hi!</span>
+					</a>
+				</li>
+			</ul>
+		</nav>
+	</article>
 </body>
 
 </html>
