@@ -7,3 +7,5 @@
 assets/css
 dist
 /node_modules
+.claude
+/src/assets
