@@ -5,13 +5,17 @@ export function initExperience(): void {
 
   if (!detailEl || nodes.length === 0) return;
 
-  // Scroll timeline to the right end on load (latest jobs visible)
-  if (scroller) {
-    scroller.scrollLeft = scroller.scrollWidth;
-  }
-
   let activeNode: HTMLButtonElement | null =
     document.querySelector<HTMLButtonElement>('.tl-node.is-active');
+
+  // Scroll timeline so the active node is visible on load
+  if (scroller && activeNode) {
+    requestAnimationFrame(() => {
+      const nodeLeft = activeNode!.offsetLeft;
+      const scrollerWidth = scroller.clientWidth;
+      scroller.scrollLeft = nodeLeft - scrollerWidth + 80;
+    });
+  }
 
   function selectNode(node: HTMLButtonElement): void {
     if (activeNode === node) return;
