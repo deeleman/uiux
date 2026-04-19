@@ -1522,3 +1522,413 @@
   0%, 100% { opacity: 0.4; }
   50% { opacity: 1; }
 }
+
+/* ══════════════════════════════════════════════════════════════════
+   MOBILE NAVIGATION BUBBLE
+   ══════════════════════════════════════════════════════════════════ */
+.mobile-nav {
+  display: none;
+  position: fixed;
+  bottom: 24px;
+  right: 20px;
+  z-index: 200;
+}
+
+.mobile-nav__toggle {
+  appearance: none;
+  border: none;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background-image: var(--grad);
+  box-shadow: 0 8px 32px -6px rgba(178,107,255,0.5);
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  position: relative;
+  z-index: 2;
+  transition: transform 260ms cubic-bezier(.2,.8,.2,1), box-shadow 260ms ease;
+}
+
+.mobile-nav__toggle:active {
+  transform: scale(0.92);
+}
+
+.mobile-nav__icon {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  width: 20px;
+}
+
+.mobile-nav__icon span {
+  display: block;
+  height: 2px;
+  width: 100%;
+  background: var(--color-bg);
+  border-radius: 1px;
+  transition: transform 260ms ease, opacity 200ms ease;
+  transform-origin: center;
+}
+
+.mobile-nav.is-open .mobile-nav__icon span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.mobile-nav.is-open .mobile-nav__icon span:nth-child(2) {
+  opacity: 0;
+}
+.mobile-nav.is-open .mobile-nav__icon span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+.mobile-nav__menu {
+  position: absolute;
+  bottom: 62px;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 10px;
+  border-radius: 16px;
+  background: rgba(17,17,19,0.94);
+  backdrop-filter: blur(16px);
+  border: 1px solid var(--color-rule);
+  box-shadow: 0 20px 60px -12px rgba(0,0,0,0.7);
+  min-width: 180px;
+  opacity: 0;
+  transform: translateY(12px) scale(0.92);
+  pointer-events: none;
+  transition: opacity 220ms ease, transform 260ms cubic-bezier(.2,.8,.2,1);
+}
+
+.mobile-nav.is-open .mobile-nav__menu {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  pointer-events: auto;
+}
+
+.mobile-nav__link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 14px;
+  border-radius: 10px;
+  color: var(--color-ink);
+  text-decoration: none;
+  font-family: var(--font-family-sans);
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: 0.01em;
+  transition: background 180ms ease;
+}
+
+.mobile-nav__link:active {
+  background: rgba(244,241,234,0.06);
+}
+
+.mobile-nav__link.is-active {
+  color: var(--color-magenta);
+}
+
+.mobile-nav__idx {
+  font-family: var(--font-family-mono);
+  font-size: 10px;
+  color: var(--color-ink-dim);
+  min-width: 18px;
+}
+
+.mobile-copyright {
+  display: none;
+  font-family: var(--font-family-mono);
+  font-size: 11px;
+  color: var(--color-ink-dim);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 24px 20px 32px;
+}
+
+/* ══════════════════════════════════════════════════════════════════
+   MOBILE RESPONSIVE — max-width: 768px
+   ══════════════════════════════════════════════════════════════════ */
+@media (max-width: 768px) {
+
+  /* ── Show mobile nav, hide desktop nav & footer ── */
+  .mobile-nav { display: block; }
+  .mobile-copyright { display: block; }
+  .top-nav { display: none; }
+  .bottom-bar { display: none; }
+
+  /* ── Hide decoration elements ── */
+  .portrait-pill { display: none; }
+
+  /* ═══ 01 — Start / Splash — portrait as dimmed background ═══ */
+  .section-splash {
+    min-height: 100vh;
+    min-height: 100dvh;
+    padding: 48px 20px 60px;
+  }
+
+  .splash-stage {
+    grid-template-columns: 1fr;
+    gap: 0;
+    min-height: calc(100vh - 108px);
+    min-height: calc(100dvh - 108px);
+    align-content: center;
+  }
+
+  .splash-portrait-col {
+    position: absolute;
+    inset: 0;
+    min-height: unset;
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  .portrait-wrap {
+    width: 100%;
+    height: 100%;
+    aspect-ratio: unset;
+    position: absolute;
+    inset: 0;
+  }
+
+  .portrait-ring,
+  .portrait-ring-inner {
+    display: none;
+  }
+
+  .portrait-frame {
+    border-radius: 0;
+    inset: 0;
+  }
+
+  .portrait-img {
+    object-position: center 20%;
+    transform: scale(1.1);
+  }
+
+  .portrait-fade {
+    background: linear-gradient(180deg, rgba(10,10,11,0.5) 0%, rgba(10,10,11,0.7) 40%, rgba(10,10,11,0.88) 70%, #0A0A0B 100%);
+  }
+
+  .portrait-grain { opacity: 0.3; }
+
+  .splash-type {
+    position: relative;
+    z-index: 2;
+    gap: 20px;
+    justify-content: flex-end;
+    min-height: 0;
+  }
+
+  .splash-headline {
+    font-size: clamp(40px, 12vw, 64px);
+  }
+
+  .splash-subtitle {
+    font-size: clamp(22px, 6vw, 34px);
+    margin-top: 16px;
+  }
+
+  .splash-lede {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  .splash-logos {
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+
+  .logo-chip {
+    font-size: 12px;
+    padding: 4px 8px;
+  }
+
+  .splash-logos-sep { width: 20px; }
+
+  .splash-ctas {
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  .cta--primary,
+  .cta--ghost {
+    padding: 12px 16px;
+    font-size: 13px;
+  }
+
+  /* ═══ 02 — Experience ═══ */
+  .section-experience {
+    padding: 80px 20px 80px;
+    --section-pad-x: 20px;
+    gap: 16px;
+  }
+
+  .section-title {
+    font-size: clamp(36px, 10vw, 56px);
+  }
+
+  .section-title-lede {
+    font-size: 14px;
+  }
+
+  .exp-detail {
+    padding: 4px 0 12px;
+    margin-top: 16px;
+    text-align: left;
+  }
+
+  .exp-detail__company {
+    font-size: clamp(18px, 5vw, 26px);
+    justify-content: flex-start;
+  }
+
+  .exp-detail__blurb {
+    font-size: 13px;
+  }
+
+  .tl-corner {
+    padding: 0 20px 10px;
+    font-size: 9px;
+  }
+
+  /* ═══ 03 — Projects — horizontal scroll ═══ */
+  .section-projects {
+    padding: 80px 20px 80px;
+    --section-pad-x: 20px;
+    gap: 24px;
+  }
+
+  .proj-grid {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 16px;
+    padding-bottom: 8px;
+    margin-left: calc(-1 * var(--section-pad-x));
+    margin-right: calc(-1 * var(--section-pad-x));
+    padding-left: var(--section-pad-x);
+    padding-right: var(--section-pad-x);
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .proj-grid::-webkit-scrollbar { display: none; }
+
+  .proj-card {
+    flex: 0 0 280px;
+    scroll-snap-align: start;
+  }
+
+  .proj-card__name {
+    font-size: 18px;
+  }
+
+  .proj-card__blurb {
+    font-size: 12.5px;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .proj-card__inner {
+    padding: 16px;
+    gap: 14px;
+  }
+
+  /* ═══ 04 — Skills — compact cards ═══ */
+  .section-skills {
+    padding: 80px 20px 80px;
+    --section-pad-x: 20px;
+    gap: 24px;
+  }
+
+  .skill-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .skill-card__inner {
+    padding: 14px;
+    gap: 8px;
+    min-height: 150px;
+  }
+
+  .skill-card__meta {
+    font-size: 9px;
+    gap: 6px;
+  }
+
+  .skill-card__title {
+    font-size: 15px;
+    margin-top: 2px;
+  }
+
+  .skill-card__body {
+    font-size: 11.5px;
+    -webkit-line-clamp: unset;
+    display: block;
+    overflow: visible;
+  }
+
+  /* ═══ 05 — Contact — compact, no headers/footers ═══ */
+  .section-contact {
+    padding: 80px 20px 40px;
+    --section-pad-x: 20px;
+    gap: 24px;
+    min-height: auto;
+  }
+
+  .contact-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .contact-card__inner {
+    padding: 16px;
+    gap: 10px;
+    min-height: auto;
+  }
+
+  .contact-card__meta { display: none; }
+  .contact-card__foot { display: none; }
+
+  .contact-card__icon-badge {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    margin-top: 0;
+  }
+
+  .contact-card__icon-inner {
+    border-radius: 8.5px;
+  }
+
+  .contact-card__icon-inner svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .contact-card__title {
+    font-size: 14px;
+    margin-top: 0;
+  }
+
+  /* ── Section eyebrows ── */
+  .section-eyebrow,
+  .section-eyebrow--alt {
+    font-size: 10px;
+    gap: 10px;
+  }
+
+  .section-title-block {
+    gap: 12px;
+  }
+
+  .section-title-lede {
+    font-size: 13px;
+  }
+}
