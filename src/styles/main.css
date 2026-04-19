@@ -769,7 +769,7 @@
 .tl-scroller {
   overflow-x: auto;
   overflow-y: hidden;
-  padding-top: 40px;
+  padding-top: 20px;
   padding-bottom: 10px;
   scrollbar-width: none;
   -ms-overflow-style: none;
@@ -779,7 +779,7 @@
 
 .tl-track {
   position: relative;
-  height: 380px;
+  height: 220px;
   min-width: 100%;
 }
 
@@ -787,14 +787,14 @@
   position: absolute;
   left: 0;
   right: 0;
-  top: 50%;
+  bottom: 0;
   height: 1px;
   background: linear-gradient(90deg, rgba(244,241,234,0.04), rgba(244,241,234,0.28) 20%, rgba(244,241,234,0.28) 80%, rgba(244,241,234,0.04));
 }
 
 .tl-axis-cap {
   position: absolute;
-  top: calc(50% - 4px);
+  bottom: -4px;
   right: 0;
   width: 9px;
   height: 9px;
@@ -828,7 +828,7 @@
 /* Timeline node (button) */
 .tl-node {
   position: absolute;
-  top: 50%;
+  bottom: 0;
   appearance: none;
   background: transparent;
   border: none;
@@ -877,8 +877,7 @@
   transition: all 220ms ease;
 }
 
-.tl-node--above .tl-connector { top: -80px; }
-.tl-node--below .tl-connector { top: 8px; }
+.tl-connector { top: -80px; }
 
 .tl-label {
   position: absolute;
@@ -893,14 +892,9 @@
   transition: all 220ms ease;
 }
 
-.tl-node--above .tl-label {
+.tl-label {
   top: -152px;
   flex-direction: column-reverse;
-}
-
-.tl-node--below .tl-label {
-  top: 90px;
-  flex-direction: column;
 }
 
 .tl-year {
