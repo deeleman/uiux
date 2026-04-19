@@ -1,17 +1,749 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Pablo Deeleman — UI Frontend Architect</title>
-    <meta name="description" content="Pablo Deeleman — UI Frontend Architect with 25+ years of experience building high-impact, scalable web applications." />
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='24' font-size='24'>👤</text></svg>" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet" />
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pablo Deeleman — UI Frontend Architect &amp; Design Systems Specialist</title>
+  <meta name="description" content="25+ years building high-impact, scalable web applications at the intersection of branding, UX and frontend engineering. Currently based in Barcelona." />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+</head>
+<body class="bg-bg text-ink font-sans min-h-screen overflow-x-hidden antialiased">
+
+  <!-- SVG filters for portrait effects -->
+  <svg width="0" height="0" class="absolute" aria-hidden="true">
+    <defs>
+      <filter id="duotone-violet" color-interpolation-filters="sRGB">
+        <feColorMatrix type="matrix" values="0.2126 0.7152 0.0722 0 0
+                                             0.2126 0.7152 0.0722 0 0
+                                             0.2126 0.7152 0.0722 0 0
+                                             0 0 0 1 0"/>
+        <feComponentTransfer>
+          <feFuncR type="table" tableValues="0.18 0.98"/>
+          <feFuncG type="table" tableValues="0.10 0.95"/>
+          <feFuncB type="table" tableValues="0.35 0.78"/>
+        </feComponentTransfer>
+      </filter>
+      <filter id="duotone-cyan" color-interpolation-filters="sRGB">
+        <feColorMatrix type="matrix" values="0.2126 0.7152 0.0722 0 0
+                                             0.2126 0.7152 0.0722 0 0
+                                             0.2126 0.7152 0.0722 0 0
+                                             0 0 0 1 0"/>
+        <feComponentTransfer>
+          <feFuncR type="table" tableValues="0.04 0.88"/>
+          <feFuncG type="table" tableValues="0.22 1.00"/>
+          <feFuncB type="table" tableValues="0.38 0.50"/>
+        </feComponentTransfer>
+      </filter>
+      <filter id="mono-warm" color-interpolation-filters="sRGB">
+        <feColorMatrix type="matrix" values="0.2126 0.7152 0.0722 0 0
+                                             0.2126 0.7152 0.0722 0 0
+                                             0.2126 0.7152 0.0722 0 0
+                                             0 0 0 1 0"/>
+        <feComponentTransfer>
+          <feFuncR type="table" tableValues="0.05 1.00"/>
+          <feFuncG type="table" tableValues="0.05 0.96"/>
+          <feFuncB type="table" tableValues="0.08 0.88"/>
+        </feComponentTransfer>
+      </filter>
+    </defs>
+  </svg>
+
+  <!-- ═══ Top Navigation ═══ -->
+  <header class="top-nav">
+    <div class="top-nav__inner">
+      <a href="#start" class="brand" aria-label="Home">
+        <span class="brand-mark"><span class="brand-dot"></span></span>
+        <span class="brand-text">
+          <span class="brand-name">pablo deeleman</span>
+          <span class="brand-slash">/</span>
+          <span class="brand-role">uiux.es</span>
+        </span>
+      </a>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="#experience" class="nav-link" data-nav="experience">
+          <span class="nav-idx">02</span><span>Experience</span>
+        </a>
+        <a href="#projects" class="nav-link" data-nav="projects">
+          <span class="nav-idx">03</span><span>Projects</span>
+        </a>
+        <a href="#skills" class="nav-link" data-nav="skills">
+          <span class="nav-idx">04</span><span>Skills</span>
+        </a>
+        <a href="#contact" class="nav-link" data-nav="contact">
+          <span class="nav-idx">05</span><span>Contact</span>
+        </a>
+      </nav>
+      <div></div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ═══ 01 — Start ═══ -->
+    <section id="start" data-section="start" class="section-splash">
+      <div class="glow glow-splash-a" aria-hidden="true"></div>
+      <div class="glow glow-splash-b" aria-hidden="true"></div>
+      <div class="grid-overlay" aria-hidden="true"></div>
+
+      <div class="splash-stage">
+        <div class="splash-type">
+          <h1 class="splash-headline">
+            <span>Pablo</span>
+            <span>Deeleman<span class="text-accent">.</span></span>
+            <span class="splash-subtitle">
+              <span class="gradient-text">UI Frontend Architect</span>
+              <span class="splash-amp">&nbsp;&amp;</span><br />
+              <span class="gradient-text">Design Systems</span>
+              <span>Specialist</span>
+            </span>
+          </h1>
+
+          <p class="splash-lede">
+            <span class="splash-lede-years">25+ years</span> building high-impact, scalable web applications
+            at the intersection of <em class="splash-em">branding</em>, <em class="splash-em">UX</em> and
+            <em class="splash-em"> frontend engineering</em>. Leading UX teams, scaling Design Systems, and
+            shipping platforms used by millions. Currently based in <strong class="splash-barcelona">Barcelona</strong>.
+          </p>
+
+          <div class="splash-logos">
+            <span class="splash-logos-label">Formerly</span>
+            <span class="splash-logos-sep"></span>
+            <span class="logo-chip">Twilio</span>
+            <span class="logo-chip">Dynatrace</span>
+            <span class="logo-chip">Red Hat</span>
+            <span class="logo-chip">Gameloft</span>
+          </div>
+
+          <div class="splash-ctas">
+            <a href="#experience" class="cta cta--primary">
+              <span>View selected work</span>
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+                <path d="M3 9h12M11 5l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="square" stroke-linejoin="miter"/>
+              </svg>
+            </a>
+            <a href="#contact" class="cta cta--ghost">
+              <span>Get in touch</span>
+              <span class="cta-dot"></span>
+            </a>
+          </div>
+        </div>
+
+        <div class="splash-portrait-col">
+          <div class="portrait-wrap">
+            <div class="portrait-ring" aria-hidden="true"></div>
+            <div class="portrait-ring-inner" aria-hidden="true"></div>
+            <div class="portrait-pill">
+              <span class="portrait-pill-dot"></span>
+              <span>Shipping since Y2K</span>
+            </div>
+            <div class="portrait-frame">
+              <img src="/assets/pablo.png" alt="Portrait of Pablo Deeleman" class="portrait-img" data-effect="mono-warm" />
+              <div class="portrait-grain" aria-hidden="true"></div>
+              <div class="portrait-scan" aria-hidden="true"></div>
+              <div class="portrait-fade" aria-hidden="true"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ 02 — Experience ═══ -->
+    <section id="experience" data-section="experience" class="section-experience">
+      <div class="glow glow-experience" aria-hidden="true"></div>
+      <div class="grid-overlay" style="background-size:64px 64px; background-image: linear-gradient(rgba(244,241,234,0.02) 1px, transparent 1px), linear-gradient(90deg, rgba(244,241,234,0.02) 1px, transparent 1px);" aria-hidden="true"></div>
+
+      <div class="section-eyebrow">
+        <span class="section-eyebrow__idx">02 / 05</span>
+        <span class="section-eyebrow__dash"></span>
+        <span class="section-eyebrow__label">Experience · <span id="exp-total-years">26</span> years · 13 chapters</span>
+      </div>
+
+      <div class="section-title-block">
+        <h2 class="section-title">A career, <span class="gradient-text">plotted</span>.</h2>
+        <p class="section-title-lede">Two decades of shipping at the intersection of branding, UX and frontend. Hover a dot to peek; click to read the chapter.</p>
+      </div>
+
+      <!-- Detail card (JS-driven) -->
+      <div id="exp-detail" class="exp-detail"
+           data-year="2025" data-end="Now" data-company="Nory"
+           data-role="Staff Product Engineer" data-location="Barcelona"
+           data-blurb="Owning Nory AI's most critical frontend challenges — driving cross-team React/TypeScript projects, setting the web reliability agenda, and acting as a force-multiplier for our internal Design System.">
+        <div class="exp-detail__head">
+          <span class="exp-detail__years">2025<span class="exp-detail__dash">—</span>Now</span>
+          <span class="exp-detail__sep"></span>
+          <span class="exp-detail__location">Barcelona</span>
+        </div>
+        <h3 class="exp-detail__company">
+          <span>Nory</span>
+          <span class="exp-detail__middot">·</span>
+          <span class="exp-detail__role gradient-text">Staff Product Engineer</span>
+        </h3>
+        <p class="exp-detail__blurb">Owning Nory AI's most critical frontend challenges — driving cross-team React/TypeScript projects, setting the web reliability agenda, and acting as a force-multiplier for our internal Design System.</p>
+      </div>
+
+      <!-- Timeline -->
+      <div class="tl-frame">
+        <div class="tl-corner">
+          <span class="tl-corner__key">Timeline →</span>
+          <span class="tl-corner__range">2000 — Now</span>
+          <span class="flex-1"></span>
+          <span class="tl-corner__key">scroll ↔</span>
+        </div>
+
+        <div id="tl-scroller" class="tl-scroller">
+          <div class="tl-track" style="width: 2310px;">
+            <div class="tl-axis"></div>
+            <div class="tl-axis-cap"></div>
+
+            <!-- 0: Trymedia (above) -->
+            <button class="tl-node tl-node--above" style="left:180px"
+                    data-exp="trymedia" data-year="2000" data-end="2001"
+                    data-company="Trymedia Systems" data-role="UI Designer &amp; Front-End Developer"
+                    data-location="Mountain View, CA"
+                    data-blurb="Designed and crafted the online presence for ActiveMARK, Trymedia's flagship DRM product — work that helped pave the way for the company's acquisition by Macrovision in 2001."
+                    aria-label="Trymedia Systems, 2000 to 2001">
+              <span class="tl-dot"><span class="tl-dot__inner"></span></span>
+              <span class="tl-connector"></span>
+              <span class="tl-label">
+                <span class="tl-year">2000</span>
+                <span class="tl-company">Trymedia Systems</span>
+                <span class="tl-role">UI Designer &amp; Front-End Developer</span>
+              </span>
+            </button>
+
+            <!-- 1: KOALAB (below) -->
+            <button class="tl-node tl-node--below" style="left:330px"
+                    data-exp="koalab" data-year="2001" data-end="2011"
+                    data-company="KOALAB" data-role="Founder · FullStack UI Developer"
+                    data-location="Barcelona"
+                    data-blurb="Co-founded an interactive agency building state-of-the-art e-commerce solutions for hospitality clients — booking engines, corporate sites, and online payments on HTML/CSS/JavaScript and ASP.NET."
+                    aria-label="KOALAB, 2001 to 2011">
+              <span class="tl-dot"><span class="tl-dot__inner"></span></span>
+              <span class="tl-connector"></span>
+              <span class="tl-label">
+                <span class="tl-year">2001</span>
+                <span class="tl-company">KOALAB</span>
+                <span class="tl-role">Founder · FullStack UI Developer</span>
+              </span>
+            </button>
+
+            <!-- 2: Dreamstar Cash (above) -->
+            <button class="tl-node tl-node--above" style="left:480px"
+                    data-exp="dreamstar" data-year="2011" data-end="2013"
+                    data-company="Dreamstar Cash" data-role="Senior UX Engineer"
+                    data-location="Remote"
+                    data-blurb="Lead UI/UX engineer across three Alexa Top 700 sites (4M+ daily uniques, 500M+ monthly pageviews). Pivoted into FullStack JavaScript and shipped the company's first mobile web app on Node.js, Express and SASS."
+                    aria-label="Dreamstar Cash, 2011 to 2013">
+              <span class="tl-dot"><span class="tl-dot__inner"></span></span>
+              <span class="tl-connector"></span>
+              <span class="tl-label">
+                <span class="tl-year">2011</span>
+                <span class="tl-company">Dreamstar Cash</span>
+                <span class="tl-role">Senior UX Engineer</span>
+              </span>
+            </button>
+
+            <!-- 3: Casumo (below) -->
+            <button class="tl-node tl-node--below" style="left:630px"
+                    data-exp="casumo" data-year="2013" data-end="2015"
+                    data-company="Casumo" data-role="Senior Frontend Engineer"
+                    data-location="Malta"
+                    data-blurb="Built and debugged advanced web components for Casumo's casino-adventure platform on Knockout.js + Durandal, plus internal tools on Angular 1.4 — pushing the envelope of UX in iGaming."
+                    aria-label="Casumo, 2013 to 2015">
+              <span class="tl-dot"><span class="tl-dot__inner"></span></span>
+              <span class="tl-connector"></span>
+              <span class="tl-label">
+                <span class="tl-year">2013</span>
+                <span class="tl-company">Casumo</span>
+                <span class="tl-role">Senior Frontend Engineer</span>
+              </span>
+            </button>
+
+            <!-- 4: Gameloft (above) -->
+            <button class="tl-node tl-node--above" style="left:780px"
+                    data-exp="gameloft" data-year="2015" data-end="2016"
+                    data-company="Gameloft" data-role="Senior Frontend Engineer"
+                    data-location="Barcelona"
+                    data-blurb="Contributed to internal tools for Game Design and HR teams in the Web Online division. Led the studio's migration to ES6 across Backbone, D3, Three.js and Node."
+                    aria-label="Gameloft, 2015 to 2016">
+              <span class="tl-dot"><span class="tl-dot__inner"></span></span>
+              <span class="tl-connector"></span>
+              <span class="tl-label">
+                <span class="tl-year">2015</span>
+                <span class="tl-company">Gameloft</span>
+                <span class="tl-role">Senior Frontend Engineer</span>
+              </span>
+            </button>
+
+            <!-- 5: Blue Orange (below) -->
+            <button class="tl-node tl-node--below" style="left:930px"
+                    data-exp="blueorange" data-year="2016" data-end="2017"
+                    data-company="We Are Blue Orange" data-role="Lead Frontend Engineer"
+                    data-location="Barcelona"
+                    data-blurb="Co-founding employee leading the front-end department. Architected the reactive engine powering Karjala Kasino and Agent Spinner on TypeScript, Angular, RxJS, Redux and NgRX."
+                    aria-label="We Are Blue Orange, 2016 to 2017">
+              <span class="tl-dot"><span class="tl-dot__inner"></span></span>
+              <span class="tl-connector"></span>
+              <span class="tl-label">
+                <span class="tl-year">2016</span>
+                <span class="tl-company">We Are Blue Orange</span>
+                <span class="tl-role">Lead Frontend Engineer</span>
+              </span>
+            </button>
+
+            <!-- 6: Red Hat (above) -->
+            <button class="tl-node tl-node--above" style="left:1080px"
+                    data-exp="redhat" data-year="2017" data-end="2018"
+                    data-company="Red Hat" data-role="Senior Frontend Engineer"
+                    data-location="Remote"
+                    data-blurb="Contributed components, unit tests and an NgRX state layer to the Angular UI of JBoss Fuse — Red Hat's flexible IPaaS for software vendors. Built a custom i18n engine and team docs."
+                    aria-label="Red Hat, 2017 to 2018">
+              <span class="tl-dot"><span class="tl-dot__inner"></span></span>
+              <span class="tl-connector"></span>
+              <span class="tl-label">
+                <span class="tl-year">2017</span>
+                <span class="tl-company">Red Hat</span>
+                <span class="tl-role">Senior Frontend Engineer</span>
+              </span>
+            </button>
+
+            <!-- 7: Dynatrace (below) -->
+            <button class="tl-node tl-node--below" style="left:1230px"
+                    data-exp="dynatrace" data-year="2018" data-end="2021"
+                    data-company="Dynatrace" data-role="Senior Frontend Engineer"
+                    data-location="Barcelona"
+                    data-blurb="Architected the Session Replay UI layer and its low-level rendering engine in Angular and React, while contributing to Dynatrace's next-gen Design System on React, Styled Components and Storybook."
+                    aria-label="Dynatrace, 2018 to 2021">
+              <span class="tl-dot"><span class="tl-dot__inner"></span></span>
+              <span class="tl-connector"></span>
+              <span class="tl-label">
+                <span class="tl-year">2018</span>
+                <span class="tl-company">Dynatrace</span>
+                <span class="tl-role">Senior Frontend Engineer</span>
+              </span>
+            </button>
+
+            <!-- 8: THN (above) -->
+            <button class="tl-node tl-node--above" style="left:1380px"
+                    data-exp="thn" data-year="2021" data-end="2022"
+                    data-company="The Hotels Network" data-role="Staff Frontend Engineer"
+                    data-location="Barcelona"
+                    data-blurb="Core member of the Agent team — the monitoring + UI script consumed by 12,000+ hotel sites worldwide on vanilla JS, Rollup and VueJS, blending behavioral analytics with dynamically-injected widgets."
+                    aria-label="The Hotels Network, 2021 to 2022">
+              <span class="tl-dot"><span class="tl-dot__inner"></span></span>
+              <span class="tl-connector"></span>
+              <span class="tl-label">
+                <span class="tl-year">2021</span>
+                <span class="tl-company">The Hotels Network</span>
+                <span class="tl-role">Staff Frontend Engineer</span>
+              </span>
+            </button>
+
+            <!-- 9: Twilio (below) -->
+            <button class="tl-node tl-node--below" style="left:1530px"
+                    data-exp="twilio" data-year="2022" data-end="2024"
+                    data-company="Twilio" data-role="Staff Frontend Engineer"
+                    data-location="Remote"
+                    data-blurb="On the Web Platform team I led the UI and Auth layers of the new internal Twilio Admin — a foundation for 20+ teams maintaining 700+ apps on Nx, React, Redux, TypeScript and Twilio Paste."
+                    aria-label="Twilio, 2022 to 2024">
+              <span class="tl-dot"><span class="tl-dot__inner"></span></span>
+              <span class="tl-connector"></span>
+              <span class="tl-label">
+                <span class="tl-year">2022</span>
+                <span class="tl-company">Twilio</span>
+                <span class="tl-role">Staff Frontend Engineer</span>
+              </span>
+            </button>
+
+            <!-- 10: Harbour.Space (above) -->
+            <button class="tl-node tl-node--above" style="left:1680px"
+                    data-exp="harbour" data-year="2022" data-end="2025"
+                    data-company="Harbour.Space" data-role="Visiting Lecturer — Design Systems"
+                    data-location="Barcelona"
+                    data-blurb="Teaching &quot;Design Systems for Interactive Applications&quot; in the Interaction Design and Front-End Engineering programmes at Harbour.Space — Bachelor and Master."
+                    aria-label="Harbour.Space, 2022 to 2025">
+              <span class="tl-dot"><span class="tl-dot__inner"></span></span>
+              <span class="tl-connector"></span>
+              <span class="tl-label">
+                <span class="tl-year">2022</span>
+                <span class="tl-company">Harbour.Space</span>
+                <span class="tl-role">Visiting Lecturer — Design Systems</span>
+              </span>
+            </button>
+
+            <!-- 11: GitKraken (below) -->
+            <button class="tl-node tl-node--below" style="left:1830px"
+                    data-exp="gitkraken" data-year="2024" data-end="2025"
+                    data-company="GitKraken" data-role="Frontend Architect (Consultant)"
+                    data-location="Remote"
+                    data-blurb="Frontend Architecture consultant on GitKraken Desktop — used by 25K+ developers across 100K organizations. Tackled performance, scalability and developer-experience challenges across the suite."
+                    aria-label="GitKraken, 2024 to 2025">
+              <span class="tl-dot"><span class="tl-dot__inner"></span></span>
+              <span class="tl-connector"></span>
+              <span class="tl-label">
+                <span class="tl-year">2024</span>
+                <span class="tl-company">GitKraken</span>
+                <span class="tl-role">Frontend Architect (Consultant)</span>
+              </span>
+            </button>
+
+            <!-- 12: Nory (above) — default selected -->
+            <button class="tl-node tl-node--above is-active" style="left:1980px"
+                    data-exp="nory" data-year="2025" data-end="Now"
+                    data-company="Nory" data-role="Staff Product Engineer"
+                    data-location="Barcelona"
+                    data-blurb="Owning Nory AI's most critical frontend challenges — driving cross-team React/TypeScript projects, setting the web reliability agenda, and acting as a force-multiplier for our internal Design System."
+                    aria-label="Nory, 2025 to Now">
+              <span class="tl-dot"><span class="tl-dot__inner"></span></span>
+              <span class="tl-connector"></span>
+              <span class="tl-label">
+                <span class="tl-year">2025</span>
+                <span class="tl-company">Nory</span>
+                <span class="tl-role">Staff Product Engineer</span>
+              </span>
+            </button>
+          </div>
+        </div>
+
+        <div class="tl-edge-left" aria-hidden="true"></div>
+        <div class="tl-edge-right" aria-hidden="true"></div>
+      </div>
+
+      <!-- SEO: all experience data as crawlable text -->
+      <div class="seo-only">
+        <h3>Complete Experience History</h3>
+        <ul>
+          <li>2000–2001: Trymedia Systems — UI Designer &amp; Front-End Developer, Mountain View, CA. Designed and crafted the online presence for ActiveMARK, Trymedia's flagship DRM product.</li>
+          <li>2001–2011: KOALAB — Founder · FullStack UI Developer, Barcelona. Co-founded an interactive agency building e-commerce solutions for hospitality clients.</li>
+          <li>2011–2013: Dreamstar Cash — Senior UX Engineer, Remote. Lead UI/UX engineer across three Alexa Top 700 sites.</li>
+          <li>2013–2015: Casumo — Senior Frontend Engineer, Malta. Built advanced web components for Casumo's casino-adventure platform.</li>
+          <li>2015–2016: Gameloft — Senior Frontend Engineer, Barcelona. Contributed to internal tools and led ES6 migration.</li>
+          <li>2016–2017: We Are Blue Orange — Lead Frontend Engineer, Barcelona. Architected reactive engine on TypeScript, Angular, RxJS, Redux and NgRX.</li>
+          <li>2017–2018: Red Hat — Senior Frontend Engineer, Remote. Contributed to Angular UI of JBoss Fuse.</li>
+          <li>2018–2021: Dynatrace — Senior Frontend Engineer, Barcelona. Architected Session Replay UI layer and contributed to next-gen Design System.</li>
+          <li>2021–2022: The Hotels Network — Staff Frontend Engineer, Barcelona. Core member of the Agent team serving 12,000+ hotel sites.</li>
+          <li>2022–2024: Twilio — Staff Frontend Engineer, Remote. Led UI and Auth layers of Twilio Admin for 20+ teams.</li>
+          <li>2022–2025: Harbour.Space — Visiting Lecturer — Design Systems, Barcelona. Teaching Design Systems for Interactive Applications.</li>
+          <li>2024–2025: GitKraken — Frontend Architect (Consultant), Remote. Tackled performance and scalability on GitKraken Desktop.</li>
+          <li>2025–Now: Nory — Staff Product Engineer, Barcelona. Driving cross-team React/TypeScript projects and internal Design System.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ═══ 03 — Projects ═══ -->
+    <section id="projects" data-section="projects" class="section-projects">
+      <div class="blob-wrap" style="opacity:0.35" aria-hidden="true">
+        <div class="blob" style="top:12%;left:8%;width:46vw;height:46vw;opacity:0.55"></div>
+        <div class="blob" style="bottom:-10%;right:-8%;width:52vw;height:52vw;opacity:0.45"></div>
+        <div class="blob" style="top:38%;left:44%;width:32vw;height:32vw;opacity:0.35"></div>
+        <div class="blob-noise"></div>
+      </div>
+      <div class="grid-overlay--80" style="z-index:1" aria-hidden="true"></div>
+
+      <div class="section-eyebrow--alt">
+        <span class="section-eyebrow__idx">03 / 05</span>
+        <span class="section-eyebrow__dash" style="width:28px"></span>
+        <span class="section-eyebrow__label">Projects</span>
+      </div>
+
+      <div class="section-title-block">
+        <h2 class="section-title">Things I've <span class="gradient-text">shipped</span>.</h2>
+        <p class="section-title-lede">A selection of side projects and published work.</p>
+      </div>
+
+      <div class="proj-grid">
+        <!-- Spaghettify -->
+        <a href="https://github.com/deeleman/spaghettify" target="_blank" rel="noopener noreferrer" class="proj-card">
+          <div class="proj-card__inner">
+            <div class="proj-card__media" style="background-image:url('/assets/spaghettify.png')" role="img" aria-label="Spaghettify project screenshot"></div>
+            <div class="proj-card__body">
+              <div class="proj-card__tag">Open-source · TypeScript</div>
+              <h3 class="proj-card__name">Spaghettify</h3>
+              <p class="proj-card__blurb">Open-source TypeScript library that transforms static pages into single-page applications with zero dependencies.</p>
+              <div class="proj-card__foot">
+                <span class="proj-card__link">github.com/deeleman/spaghettify</span>
+                <span class="proj-card__arrow" style="background-image:var(--grad)">
+                  <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M1 5h8M5 1l4 4-4 4" stroke="#0A0A0B" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </span>
+              </div>
+            </div>
+          </div>
+        </a>
+
+        <!-- GitSquid -->
+        <a href="https://github.com/deeleman/git-squid" target="_blank" rel="noopener noreferrer" class="proj-card">
+          <div class="proj-card__inner">
+            <div class="proj-card__media" style="background-image:url('/assets/gitsquid.png')" role="img" aria-label="GitSquid project screenshot"></div>
+            <div class="proj-card__body">
+              <div class="proj-card__tag">Desktop app · TypeScript</div>
+              <h3 class="proj-card__name">GitSquid</h3>
+              <p class="proj-card__blurb">Desktop app built with TypeScript for navigating and managing GitHub issues across repositories.</p>
+              <div class="proj-card__foot">
+                <span class="proj-card__link">github.com/deeleman/git-squid</span>
+                <span class="proj-card__arrow" style="background-image:var(--grad)">
+                  <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M1 5h8M5 1l4 4-4 4" stroke="#0A0A0B" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </span>
+              </div>
+            </div>
+          </div>
+        </a>
+
+        <!-- Learning Angular -->
+        <a href="https://www.packtpub.com/en-cl/product/learning-angular-9781803240602" target="_blank" rel="noopener noreferrer" class="proj-card">
+          <div class="proj-card__inner">
+            <div class="proj-card__media" style="background-image:url('/assets/learning-angular.png')" role="img" aria-label="Learning Angular book cover"></div>
+            <div class="proj-card__body">
+              <div class="proj-card__tag">Book · Packt Publishing</div>
+              <h3 class="proj-card__name">Learning Angular</h3>
+              <p class="proj-card__blurb">Authored the first edition and co-authored editions 2 through 4, all published by Packt. Helped thousands of developers master the Angular framework and the TypeScript ecosystem.</p>
+              <div class="proj-card__foot">
+                <span class="proj-card__link">packtpub.com</span>
+                <span class="proj-card__arrow" style="background-image:var(--grad)">
+                  <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M1 5h8M5 1l4 4-4 4" stroke="#0A0A0B" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </span>
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <!-- ═══ 04 — Skills ═══ -->
+    <section id="skills" data-section="skills" class="section-skills">
+      <div class="blob-wrap" style="opacity:0.28" aria-hidden="true">
+        <div class="blob" style="top:-18%;right:-10%;width:46vw;height:46vw;opacity:0.6"></div>
+        <div class="blob" style="bottom:-20%;left:-10%;width:50vw;height:50vw;opacity:0.45"></div>
+      </div>
+      <div class="grid-overlay--80" style="z-index:1" aria-hidden="true"></div>
+
+      <div class="section-eyebrow--alt">
+        <span class="section-eyebrow__idx">04 / 05</span>
+        <span class="section-eyebrow__dash" style="width:28px"></span>
+        <span class="section-eyebrow__label">Skills</span>
+      </div>
+
+      <div class="section-title-block">
+        <h2 class="section-title">What I'm <span class="gradient-text">good</span> at.</h2>
+        <p class="section-title-lede">Eight technical domains where I bring depth and opinion — not just familiarity.</p>
+      </div>
+
+      <div class="skill-grid">
+        <div class="skill-card">
+          <div class="skill-card__inner" style="background:radial-gradient(120% 80% at 0% 0%, rgba(178,107,255,0.13), transparent 55%), radial-gradient(120% 80% at 100% 100%, rgba(108,195,255,0.09), transparent 55%), linear-gradient(180deg, rgba(28,28,32,0.94), rgba(15,15,17,0.94))">
+            <div class="skill-card__meta"><span class="skill-card__num">01</span><span class="skill-card__dash"></span><span>Craft</span></div>
+            <h3 class="skill-card__title" style="background-image:linear-gradient(100deg, #B26BFF, #6CC3FF)">Design Systems</h3>
+            <p class="skill-card__body">Audit, planning and implementation across product teams.</p>
+          </div>
+        </div>
+        <div class="skill-card">
+          <div class="skill-card__inner" style="background:radial-gradient(120% 80% at 0% 0%, rgba(108,195,255,0.13), transparent 55%), radial-gradient(120% 80% at 100% 100%, rgba(214,255,91,0.09), transparent 55%), linear-gradient(180deg, rgba(28,28,32,0.94), rgba(15,15,17,0.94))">
+            <div class="skill-card__meta"><span class="skill-card__num">02</span><span class="skill-card__dash"></span><span>Frameworks</span></div>
+            <h3 class="skill-card__title" style="background-image:linear-gradient(100deg, #6CC3FF, #D6FF5B)">Frontend Libraries</h3>
+            <p class="skill-card__body">React, Angular and Vue.js — used in anger, at scale, in production.</p>
+          </div>
+        </div>
+        <div class="skill-card">
+          <div class="skill-card__inner" style="background:radial-gradient(120% 80% at 0% 0%, rgba(214,255,91,0.13), transparent 55%), radial-gradient(120% 80% at 100% 100%, rgba(108,195,255,0.09), transparent 55%), linear-gradient(180deg, rgba(28,28,32,0.94), rgba(15,15,17,0.94))">
+            <div class="skill-card__meta"><span class="skill-card__num">03</span><span class="skill-card__dash"></span><span>Languages</span></div>
+            <h3 class="skill-card__title" style="background-image:linear-gradient(100deg, #D6FF5B, #6CC3FF)">TypeScript &amp; JavaScript</h3>
+            <p class="skill-card__body">Two decades of shipping the language, from ES3 hacks to strict, generic-heavy codebases.</p>
+          </div>
+        </div>
+        <div class="skill-card">
+          <div class="skill-card__inner" style="background:radial-gradient(120% 80% at 0% 0%, rgba(178,107,255,0.13), transparent 55%), radial-gradient(120% 80% at 100% 100%, rgba(255,122,182,0.09), transparent 55%), linear-gradient(180deg, rgba(28,28,32,0.94), rgba(15,15,17,0.94))">
+            <div class="skill-card__meta"><span class="skill-card__num">04</span><span class="skill-card__dash"></span><span>Emerging</span></div>
+            <h3 class="skill-card__title" style="background-image:linear-gradient(100deg, #B26BFF, #FF7AB6)">AI Engineering</h3>
+            <p class="skill-card__body">LLMs, agent design and AI-driven tooling and development.</p>
+          </div>
+        </div>
+        <div class="skill-card">
+          <div class="skill-card__inner" style="background:radial-gradient(120% 80% at 0% 0%, rgba(255,180,107,0.13), transparent 55%), radial-gradient(120% 80% at 100% 100%, rgba(214,255,91,0.09), transparent 55%), linear-gradient(180deg, rgba(28,28,32,0.94), rgba(15,15,17,0.94))">
+            <div class="skill-card__meta"><span class="skill-card__num">05</span><span class="skill-card__dash"></span><span>Backend</span></div>
+            <h3 class="skill-card__title" style="background-image:linear-gradient(100deg, #FFB46B, #D6FF5B)">Server-side JavaScript</h3>
+            <p class="skill-card__body">Production-grade APIs with Express.js and NestJS.</p>
+          </div>
+        </div>
+        <div class="skill-card">
+          <div class="skill-card__inner" style="background:radial-gradient(120% 80% at 0% 0%, rgba(108,195,255,0.13), transparent 55%), radial-gradient(120% 80% at 100% 100%, rgba(178,107,255,0.09), transparent 55%), linear-gradient(180deg, rgba(28,28,32,0.94), rgba(15,15,17,0.94))">
+            <div class="skill-card__meta"><span class="skill-card__num">06</span><span class="skill-card__dash"></span><span>Styling</span></div>
+            <h3 class="skill-card__title" style="background-image:linear-gradient(100deg, #6CC3FF, #B26BFF)">CSS, SASS &amp; Tailwind</h3>
+            <p class="skill-card__body">Modern CSS, design tokens, utility-first systems and print-quality typography.</p>
+          </div>
+        </div>
+        <div class="skill-card">
+          <div class="skill-card__inner" style="background:radial-gradient(120% 80% at 0% 0%, rgba(214,255,91,0.13), transparent 55%), radial-gradient(120% 80% at 100% 100%, rgba(178,107,255,0.09), transparent 55%), linear-gradient(180deg, rgba(28,28,32,0.94), rgba(15,15,17,0.94))">
+            <div class="skill-card__meta"><span class="skill-card__num">07</span><span class="skill-card__dash"></span><span>Architecture</span></div>
+            <h3 class="skill-card__title" style="background-image:linear-gradient(100deg, #D6FF5B, #B26BFF)">State Management</h3>
+            <p class="skill-card__body">Redux, RxJS, Jotai and Zustand — picked to fit the app, not the other way around.</p>
+          </div>
+        </div>
+        <div class="skill-card">
+          <div class="skill-card__inner" style="background:radial-gradient(120% 80% at 0% 0%, rgba(255,122,182,0.13), transparent 55%), radial-gradient(120% 80% at 100% 100%, rgba(108,195,255,0.09), transparent 55%), linear-gradient(180deg, rgba(28,28,32,0.94), rgba(15,15,17,0.94))">
+            <div class="skill-card__meta"><span class="skill-card__num">08</span><span class="skill-card__dash"></span><span>Quality</span></div>
+            <h3 class="skill-card__title" style="background-image:linear-gradient(100deg, #FF7AB6, #6CC3FF)">Web Accessibility</h3>
+            <p class="skill-card__body">Semantic markup, WAI-ARIA, keyboard and screen-reader QA as a non-negotiable.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ 05 — Contact ═══ -->
+    <section id="contact" data-section="contact" class="section-contact">
+      <div class="blob-wrap" style="opacity:0.3; filter:blur(100px) saturate(120%)" aria-hidden="true">
+        <div class="blob" style="top:8%;left:-10%;width:52vw;height:52vw;opacity:0.55"></div>
+        <div class="blob" style="bottom:-20%;right:-10%;width:50vw;height:50vw;opacity:0.4"></div>
+      </div>
+      <div class="grid-overlay--80" style="z-index:1" aria-hidden="true"></div>
+
+      <div class="section-eyebrow--alt">
+        <span class="section-eyebrow__idx">05 / 05</span>
+        <span class="section-eyebrow__dash" style="width:28px"></span>
+        <span class="section-eyebrow__label">Contact</span>
+      </div>
+
+      <div class="section-title-block">
+        <h2 class="section-title">Let's <span class="gradient-text">talk</span>.</h2>
+        <p class="section-title-lede" style="max-width:62ch">
+          Got a new product to ship, a design system to tame, or a team that needs mentoring?
+          I'm also happy to chat about educational collaborations — or just meet up for coffee.
+          Pick the channel that works for you.
+        </p>
+      </div>
+
+      <div class="contact-grid">
+        <!-- Email -->
+        <a href="mailto:hello@uiux.es" class="contact-card">
+          <div class="contact-card__inner" style="background:radial-gradient(120% 80% at 0% 0%, rgba(214,255,91,0.14), transparent 55%), radial-gradient(120% 80% at 100% 100%, rgba(108,195,255,0.11), transparent 55%), linear-gradient(180deg, rgba(28,28,32,0.94), rgba(15,15,17,0.94))">
+            <div class="contact-card__meta"><span class="contact-card__num">01</span><span class="contact-card__dash"></span><span>Email</span></div>
+            <div class="contact-card__icon-badge" style="background-image:linear-gradient(100deg, #D6FF5B, #6CC3FF)">
+              <span class="contact-card__icon-inner">
+                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3.5 6.5 12 13l8.5-6.5"/></svg>
+              </span>
+            </div>
+            <h3 class="contact-card__title" style="background-image:linear-gradient(100deg, #D6FF5B, #6CC3FF)">Send me an email</h3>
+            <div class="contact-card__foot">
+              <span class="contact-card__handle">hello@uiux.es</span>
+              <span class="contact-card__arrow" style="background-image:linear-gradient(100deg, #D6FF5B, #6CC3FF)">
+                <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M1 5h8M5 1l4 4-4 4" stroke="#0A0A0B" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+            </div>
+          </div>
+        </a>
+
+        <!-- LinkedIn -->
+        <a href="https://www.linkedin.com/in/pablodeeleman/" target="_blank" rel="noopener noreferrer" class="contact-card">
+          <div class="contact-card__inner" style="background:radial-gradient(120% 80% at 0% 0%, rgba(108,195,255,0.14), transparent 55%), radial-gradient(120% 80% at 100% 100%, rgba(178,107,255,0.11), transparent 55%), linear-gradient(180deg, rgba(28,28,32,0.94), rgba(15,15,17,0.94))">
+            <div class="contact-card__meta"><span class="contact-card__num">02</span><span class="contact-card__dash"></span><span>LinkedIn</span></div>
+            <div class="contact-card__icon-badge" style="background-image:linear-gradient(100deg, #6CC3FF, #B26BFF)">
+              <span class="contact-card__icon-inner">
+                <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M4.98 3.5A2.5 2.5 0 1 1 2.48 6a2.5 2.5 0 0 1 2.5-2.5ZM3 8.98h4V21H3V8.98ZM9.5 8.98H13.3V10.67h.05c.53-1 1.83-2.06 3.77-2.06 4.04 0 4.78 2.66 4.78 6.12V21h-4V15.33c0-1.35-.02-3.09-1.88-3.09-1.88 0-2.17 1.47-2.17 2.99V21h-4V8.98Z"/></svg>
+              </span>
+            </div>
+            <h3 class="contact-card__title" style="background-image:linear-gradient(100deg, #6CC3FF, #B26BFF)">Connect on LinkedIn</h3>
+            <div class="contact-card__foot">
+              <span class="contact-card__handle">linkedin.com/in/pablodeeleman</span>
+              <span class="contact-card__arrow" style="background-image:linear-gradient(100deg, #6CC3FF, #B26BFF)">
+                <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M1 5h8M5 1l4 4-4 4" stroke="#0A0A0B" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+            </div>
+          </div>
+        </a>
+
+        <!-- GitHub -->
+        <a href="https://github.com/deeleman" target="_blank" rel="noopener noreferrer" class="contact-card">
+          <div class="contact-card__inner" style="background:radial-gradient(120% 80% at 0% 0%, rgba(178,107,255,0.14), transparent 55%), radial-gradient(120% 80% at 100% 100%, rgba(255,122,182,0.11), transparent 55%), linear-gradient(180deg, rgba(28,28,32,0.94), rgba(15,15,17,0.94))">
+            <div class="contact-card__meta"><span class="contact-card__num">03</span><span class="contact-card__dash"></span><span>GitHub</span></div>
+            <div class="contact-card__icon-badge" style="background-image:linear-gradient(100deg, #B26BFF, #FF7AB6)">
+              <span class="contact-card__icon-inner">
+                <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.46-1.16-1.11-1.47-1.11-1.47-.9-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.89 1.52 2.33 1.08 2.9.83.09-.65.35-1.08.63-1.33-2.22-.25-4.56-1.11-4.56-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.02a9.56 9.56 0 0 1 5 0c1.9-1.29 2.74-1.02 2.74-1.02.55 1.38.2 2.4.1 2.65.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.86v2.76c0 .27.18.58.69.48A10 10 0 0 0 12 2Z"/></svg>
+              </span>
+            </div>
+            <h3 class="contact-card__title" style="background-image:linear-gradient(100deg, #B26BFF, #FF7AB6)">Follow me on GitHub</h3>
+            <div class="contact-card__foot">
+              <span class="contact-card__handle">@deeleman</span>
+              <span class="contact-card__arrow" style="background-image:linear-gradient(100deg, #B26BFF, #FF7AB6)">
+                <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M1 5h8M5 1l4 4-4 4" stroke="#0A0A0B" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+            </div>
+          </div>
+        </a>
+
+        <!-- Behance -->
+        <a href="https://www.behance.net/pablodeeleman" target="_blank" rel="noopener noreferrer" class="contact-card">
+          <div class="contact-card__inner" style="background:radial-gradient(120% 80% at 0% 0%, rgba(108,195,255,0.14), transparent 55%), radial-gradient(120% 80% at 100% 100%, rgba(214,255,91,0.11), transparent 55%), linear-gradient(180deg, rgba(28,28,32,0.94), rgba(15,15,17,0.94))">
+            <div class="contact-card__meta"><span class="contact-card__num">04</span><span class="contact-card__dash"></span><span>Behance</span></div>
+            <div class="contact-card__icon-badge" style="background-image:linear-gradient(100deg, #6CC3FF, #D6FF5B)">
+              <span class="contact-card__icon-inner">
+                <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M7.8 6.5c1.25 0 2.24.21 2.96.64.73.43 1.1 1.14 1.1 2.14 0 .62-.15 1.15-.45 1.57-.27.39-.65.69-1.15.9.74.2 1.29.56 1.66 1.07.36.5.54 1.11.54 1.84 0 .67-.12 1.24-.36 1.7-.22.46-.55.83-.96 1.12-.43.28-.92.49-1.49.63-.55.13-1.14.2-1.76.2H2V6.5h5.8Zm-.27 4.4c.55 0 1-.13 1.35-.39.35-.26.52-.68.52-1.26 0-.32-.06-.58-.18-.79-.11-.2-.27-.36-.47-.47-.2-.11-.43-.19-.69-.23-.26-.04-.54-.06-.83-.06H4.5v3.2h3.03Zm.18 4.84c.3 0 .6-.03.86-.09.27-.06.51-.16.72-.3.2-.13.37-.32.48-.56.12-.23.18-.54.18-.91 0-.72-.2-1.23-.61-1.53-.4-.3-.94-.45-1.61-.45H4.5v3.84h3.21Zm10.79-.38c.38.36.92.55 1.63.55.51 0 .95-.13 1.31-.38.38-.27.6-.54.69-.83h2.35c-.37 1.16-.95 1.99-1.72 2.49-.77.49-1.71.74-2.8.74-.76 0-1.45-.12-2.05-.36-.61-.25-1.12-.6-1.54-1.04-.42-.45-.74-.99-.96-1.62a6.1 6.1 0 0 1-.32-2.02c0-.71.11-1.37.33-1.98.23-.61.54-1.15.96-1.59.41-.45.9-.8 1.48-1.05.57-.25 1.2-.38 1.89-.38.77 0 1.44.15 2.01.45.57.3 1.04.7 1.4 1.2.37.5.63 1.07.79 1.71.16.65.22 1.32.18 2.02h-6.45c.04.83.26 1.43.64 1.8Zm2.83-4.8c-.3-.31-.76-.47-1.38-.47-.41 0-.75.07-1.02.21-.27.13-.49.3-.66.49-.17.19-.28.4-.35.61a2.41 2.41 0 0 0-.11.54h4c-.12-.62-.35-1.08-.66-1.38-.3-.31-.06-.06 0 0ZM15 7.4h5v1.4h-5V7.4Z"/></svg>
+              </span>
+            </div>
+            <h3 class="contact-card__title" style="background-image:linear-gradient(100deg, #6CC3FF, #D6FF5B)">See my old UI/UX portfolio</h3>
+            <div class="contact-card__foot">
+              <span class="contact-card__handle">behance.net/pablodeeleman</span>
+              <span class="contact-card__arrow" style="background-image:linear-gradient(100deg, #6CC3FF, #D6FF5B)">
+                <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M1 5h8M5 1l4 4-4 4" stroke="#0A0A0B" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+            </div>
+          </div>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <!-- ═══ Bottom Bar ═══ -->
+  <footer class="bottom-bar">
+    <div class="bottom-bar__inner">
+      <div class="flex gap-2.5 items-baseline">
+        <span class="bottom-bar__key">Section</span>
+        <span class="bottom-bar__val" id="bar-section">01 / 05&nbsp;·&nbsp;Intro</span>
+      </div>
+      <div class="flex gap-2.5 items-baseline">
+        <span class="bottom-bar__key">Contact</span>
+        <a href="mailto:hello@uiux.es" class="foot-mail">hello@uiux.es</a>
+      </div>
+      <div class="bottom-bar__copyright">
+        <span>© COPYRIGHT_YEAR Pablo Deeleman</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ═══ Tweaks Panel (hidden, activated via postMessage) ═══ -->
+  <div id="tweaks-panel" class="tweaks-panel" hidden>
+    <div class="tweaks-panel__head">
+      <span class="tweaks-panel__title">Tweaks</span>
+      <span class="tweaks-panel__hint">splash &amp; experience</span>
+    </div>
+    <div class="tweaks-row">
+      <span class="tweaks-label">Photo effect</span>
+      <div class="tweaks-chips" id="tweaks-effect">
+        <button class="tweaks-chip" data-value="duotone-violet">Violet</button>
+        <button class="tweaks-chip" data-value="duotone-cyan">Cyan</button>
+        <button class="tweaks-chip is-active" data-value="mono-warm">Mono</button>
+        <button class="tweaks-chip" data-value="none">Raw</button>
+      </div>
+    </div>
+    <div class="tweaks-row">
+      <span class="tweaks-label">Gradient</span>
+      <div class="tweaks-grads" id="tweaks-gradient">
+        <button class="tweaks-swatch is-active" data-value="spectrum" title="spectrum" style="background:linear-gradient(100deg, #B26BFF 0%, #6CC3FF 42%, #D6FF5B 100%)"></button>
+        <button class="tweaks-swatch" data-value="aurora" title="aurora" style="background:linear-gradient(100deg, #5AF0C8 0%, #7B8CFF 55%, #FF7AD1 100%)"></button>
+        <button class="tweaks-swatch" data-value="sunset" title="sunset" style="background:linear-gradient(100deg, #FF6B3D 0%, #FF3D7F 55%, #B26BFF 100%)"></button>
+        <button class="tweaks-swatch" data-value="citrus" title="citrus" style="background:linear-gradient(100deg, #D6FF5B 0%, #5AF0C8 100%)"></button>
+        <button class="tweaks-swatch" data-value="ember" title="ember" style="background:linear-gradient(100deg, #FFB347 0%, #FF3D7F 60%, #9D3DFF 100%)"></button>
+      </div>
+    </div>
+    <div class="tweaks-row">
+      <span class="tweaks-label" id="tweaks-grain-label">Grain 60%</span>
+      <input type="range" min="0" max="1" step="0.05" value="0.6" class="tweaks-range" id="tweaks-grain" />
+    </div>
+    <div class="tweaks-row">
+      <span class="tweaks-label" id="tweaks-zoom-label">Photo zoom 1.13×</span>
+      <input type="range" min="1" max="1.35" step="0.01" value="1.13" class="tweaks-range" id="tweaks-zoom" />
+    </div>
+  </div>
+
+  <script type="module" src="/src/main.ts"></script>
+</body>
 </html>
