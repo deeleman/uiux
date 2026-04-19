@@ -1748,6 +1748,7 @@
   }
 
   .splash-logos-sep { width: 20px; }
+  .splash-logos .logo-chip:last-child { display: none; }
 
   .splash-ctas {
     gap: 10px;
