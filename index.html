@@ -704,45 +704,10 @@
         <a href="mailto:hello@uiux.es" class="foot-mail">hello@uiux.es</a>
       </div>
       <div class="bottom-bar__copyright">
-        <span>© COPYRIGHT_YEAR Pablo Deeleman</span>
+        <span>© {{COPYRIGHT_YEAR}} Pablo Deeleman</span>
       </div>
     </div>
   </footer>
-
-  <!-- ═══ Tweaks Panel (hidden, activated via postMessage) ═══ -->
-  <div id="tweaks-panel" class="tweaks-panel" hidden>
-    <div class="tweaks-panel__head">
-      <span class="tweaks-panel__title">Tweaks</span>
-      <span class="tweaks-panel__hint">splash &amp; experience</span>
-    </div>
-    <div class="tweaks-row">
-      <span class="tweaks-label">Photo effect</span>
-      <div class="tweaks-chips" id="tweaks-effect">
-        <button class="tweaks-chip" data-value="duotone-violet">Violet</button>
-        <button class="tweaks-chip" data-value="duotone-cyan">Cyan</button>
-        <button class="tweaks-chip is-active" data-value="mono-warm">Mono</button>
-        <button class="tweaks-chip" data-value="none">Raw</button>
-      </div>
-    </div>
-    <div class="tweaks-row">
-      <span class="tweaks-label">Gradient</span>
-      <div class="tweaks-grads" id="tweaks-gradient">
-        <button class="tweaks-swatch is-active" data-value="spectrum" title="spectrum" style="background:linear-gradient(100deg, #B26BFF 0%, #6CC3FF 42%, #D6FF5B 100%)"></button>
-        <button class="tweaks-swatch" data-value="aurora" title="aurora" style="background:linear-gradient(100deg, #5AF0C8 0%, #7B8CFF 55%, #FF7AD1 100%)"></button>
-        <button class="tweaks-swatch" data-value="sunset" title="sunset" style="background:linear-gradient(100deg, #FF6B3D 0%, #FF3D7F 55%, #B26BFF 100%)"></button>
-        <button class="tweaks-swatch" data-value="citrus" title="citrus" style="background:linear-gradient(100deg, #D6FF5B 0%, #5AF0C8 100%)"></button>
-        <button class="tweaks-swatch" data-value="ember" title="ember" style="background:linear-gradient(100deg, #FFB347 0%, #FF3D7F 60%, #9D3DFF 100%)"></button>
-      </div>
-    </div>
-    <div class="tweaks-row">
-      <span class="tweaks-label" id="tweaks-grain-label">Grain 60%</span>
-      <input type="range" min="0" max="1" step="0.05" value="0.6" class="tweaks-range" id="tweaks-grain" />
-    </div>
-    <div class="tweaks-row">
-      <span class="tweaks-label" id="tweaks-zoom-label">Photo zoom 1.13×</span>
-      <input type="range" min="1" max="1.35" step="0.01" value="1.13" class="tweaks-range" id="tweaks-zoom" />
-    </div>
-  </div>
 
   <script type="module" src="/src/main.ts"></script>
 </body>

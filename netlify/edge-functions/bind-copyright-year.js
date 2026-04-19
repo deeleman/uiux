@@ -2,7 +2,7 @@ export default async (request, context) => {
   const response = await context.next();
   const page = await response.text();
 
-  const regex = /COPYRIGHT_YEAR/i;
+  const regex = /{{COPYRIGHT_YEAR}}/i;
 
   const year = new Date().getFullYear();
 

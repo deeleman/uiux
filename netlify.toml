@@ -4,3 +4,7 @@
 
 [build.environment]
   NODE_VERSION = "24.14.0"
+
+[[edge_functions]]
+  path = "/*"
+  function = "bind-copyright-year"
