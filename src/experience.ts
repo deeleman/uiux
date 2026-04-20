@@ -13,7 +13,7 @@ export function initExperience(): void {
     requestAnimationFrame(() => {
       const nodeLeft = activeNode!.offsetLeft;
       const scrollerWidth = scroller.clientWidth;
-      scroller.scrollLeft = nodeLeft - scrollerWidth + 80;
+      scroller.scrollLeft = nodeLeft - scrollerWidth + 180;
     });
   }
 
@@ -36,6 +36,7 @@ export function initExperience(): void {
     clone.id = 'exp-detail';
     clone.className = 'exp-detail';
 
+    clone.style.animation = 'none';
     clone.innerHTML = `
       <div class="exp-detail__head">
         <span class="exp-detail__years">${year}<span class="exp-detail__dash">—</span>${end ?? ''}</span>
@@ -49,6 +50,10 @@ export function initExperience(): void {
       </h3>
       <p class="exp-detail__blurb">${blurb ?? ''}</p>
     `;
+
+    for (const child of Array.from(clone.children)) {
+      (child as HTMLElement).style.animation = 'none';
+    }
 
     parent.replaceChild(clone, detailEl!);
     detailEl = clone;

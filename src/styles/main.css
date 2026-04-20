@@ -1720,7 +1720,10 @@
     justify-content: flex-end;
     min-height: 0;
     padding: 0 20px 60px;
+    transform: translateY(140px);
   }
+
+  .splash-ctas .cta--ghost { display: none; }
 
   .splash-headline {
     font-size: clamp(40px, 12vw, 64px);
@@ -1797,7 +1800,7 @@
 
   /* ═══ 03 — Projects — horizontal scroll ═══ */
   .section-projects {
-    padding: 80px 20px 80px;
+    padding: 30px 20px 80px;
     --section-pad-x: 20px;
     gap: 24px;
   }
@@ -1823,6 +1826,10 @@
     scroll-snap-align: start;
   }
 
+  .proj-card__media {
+    filter: none;
+  }
+
   .proj-card__name {
     font-size: 18px;
   }
@@ -1842,7 +1849,7 @@
 
   /* ═══ 04 — Skills — compact cards ═══ */
   .section-skills {
-    padding: 80px 20px 80px;
+    padding: 30px 20px 80px;
     --section-pad-x: 20px;
     gap: 24px;
   }
@@ -1877,7 +1884,7 @@
 
   /* ═══ 05 — Contact — compact, no headers/footers ═══ */
   .section-contact {
-    padding: 80px 20px 40px;
+    padding: 30px 20px 40px;
     --section-pad-x: 20px;
     gap: 24px;
     min-height: auto;
